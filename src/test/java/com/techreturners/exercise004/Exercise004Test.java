@@ -28,12 +28,20 @@ public class Exercise004Test {
         assertEquals(expected, ex004.getDateTime());
     }
 
-
     @Test
     public void checkGetDateTimeWhenBothDateAndTimeIsSpecifiedWithDayRollOver() {
 
         Exercise004 ex004 = new Exercise004(LocalDateTime.of(2021, Month.JANUARY, 24, 23, 59, 59, 0));
         LocalDateTime expected = LocalDateTime.of(2052, Month.OCTOBER, 03, 1, 46, 39);
+
+        assertEquals(expected, ex004.getDateTime());
+    }
+
+    @Test
+    public void checkGetDateTimeWhenDateIsSpecifiedWhenLeapYear() {
+
+        Exercise004 ex004 = new Exercise004(LocalDate.of(2020, Month.FEBRUARY, 29));
+        LocalDateTime expected = LocalDateTime.of(2051, Month.NOVEMBER, 07, 1, 46, 40);
 
         assertEquals(expected, ex004.getDateTime());
     }
