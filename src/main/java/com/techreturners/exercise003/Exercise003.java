@@ -1,28 +1,33 @@
 package com.techreturners.exercise003;
 
-import java.util.ArrayList;
+
+import java.util.LinkedHashMap;
 
 public class Exercise003 {
-    //declare string array to store all ice cream flavours
-    private String[] iceCreamFlavours = {"Pistachio","Raspberry Ripple","Vanilla","Mint Chocolate Chip","Chocolate","Mango Sorbet"};
+
+    //re-factored code with LinkedHashMap to store ice cream flavours
+    //Used LinkedHashMap so method iceCreamFlavours will return the key set as String array with the right order
+    private final LinkedHashMap<String, Integer> iceCreamFlavours = new LinkedHashMap<>();
+
+    public Exercise003() {
+        iceCreamFlavours.put("Pistachio", 0);
+        iceCreamFlavours.put("Raspberry Ripple", 1);
+        iceCreamFlavours.put("Vanilla", 2);
+        iceCreamFlavours.put("Mint Chocolate Chip", 3);
+        iceCreamFlavours.put("Chocolate", 4);
+        iceCreamFlavours.put("Mango Sorbet", 5);
+    }
 
     int getIceCreamCode(String iceCreamFlavour) {
-        int code=0;
-        //iterate iceCreamFlavours to see if match to iceCreamFlavour
-        for(int i=0;i<iceCreamFlavours.length;i++){
-            if (iceCreamFlavour.equals(iceCreamFlavours[i])){
-                //store the code for the flavour
-                code = i;
-            }
-            // should I throw an exception here if there is no matching flavour?
+        if (iceCreamFlavours.containsKey(iceCreamFlavour)) {
+            return iceCreamFlavours.get(iceCreamFlavour);
+        } else {
+            throw new RuntimeException("No such ice cream flavour");
         }
-        return code;
-
     }
 
     String[] iceCreamFlavours() {
-        return iceCreamFlavours;
-
+        return iceCreamFlavours.keySet().toArray(new String[0]);
     }
 
 }

@@ -57,7 +57,6 @@ public class Exercise001Test {
         User u3 = new User("Sheila", "CentOS 7", "Linux");
         User u4 = new User("Pedro", "Ubuntu 18.04", "Linux");
 
-
         List<User> users = new ArrayList<User>();
         users.add(u1);
         users.add(u2);

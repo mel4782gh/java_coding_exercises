@@ -2,7 +2,6 @@ package com.techreturners.exercise003;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Ignore;
 
 import static org.junit.Assert.assertEquals;
 
@@ -44,8 +43,7 @@ public class Exercise003Test {
 
     @Test
     public void checkPickMultipleIceCreamFlavours() {
-
-        String[] expected = { "Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip", "Chocolate", "Mango Sorbet" };
+        String[] expected = {"Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip", "Chocolate", "Mango Sorbet"};
 
         assertEquals(expected, ex003.iceCreamFlavours());
     }

@@ -1,15 +1,13 @@
 package com.techreturners.exercise004;
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Month;
 
 
 public class Exercise004 {
 
-private LocalDateTime  datePlusGigaSecond;
-private final long gigasecond = 1000000000;
+    private LocalDateTime datePlusGigaSecond;
+    private final long gigasecond = 1000000000;
 
     public Exercise004(LocalDate date) {
         //store the date as LocalDateTime object which includes seconds
@@ -25,6 +23,5 @@ private final long gigasecond = 1000000000;
 
     public LocalDateTime getDateTime() {
         return this.datePlusGigaSecond;
-
     }
 }
